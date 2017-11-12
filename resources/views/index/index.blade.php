@@ -163,19 +163,20 @@
     <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
     <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
     <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <!-- <div class="cell"><a href="#"><img src="/images/07.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/08.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/09.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/10.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/11.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/12.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/13.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/14.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/15.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/16.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/17.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/18.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div>
-    <div class="cell"><a href="#"><img src="/images/19.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/">站长素材</a></p></div> -->
+    <!-- <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/02.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/03.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/02.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/03.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
+    <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div> -->
 </div>
 <script>
 var opt={
@@ -196,5 +197,5 @@ var opt={
   auto_imgHeight:true,
   insert_type:1
 }
-// $('#waterfall').waterfall(opt);
+$('#waterfall').waterfall(opt);
 </script>
