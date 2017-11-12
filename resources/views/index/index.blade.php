@@ -196,5 +196,5 @@ var opt={
   auto_imgHeight:true,
   insert_type:1
 }
-$('#waterfall').waterfall(opt);
+// $('#waterfall').waterfall(opt);
 </script>
