@@ -20,10 +20,13 @@
   <body>
     
     @section('sidebar')
-        相册
+        
     @show
 
-
+    <div class="container">
+        @yield('content')
+    </div>
+    <script src="/js/layer-ui/layer.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/js/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

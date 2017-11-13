@@ -1,4 +1,5 @@
 @extends('layouts.layout')
+@section('content')
 <script src="/js/jquery.min.js"></script>
 <script>
 ;(function($){
@@ -152,9 +153,7 @@
    }
 })(jQuery);
 </script>
-</head>
 
-<body>
 <div id="waterfall">
     <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
     <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
@@ -163,20 +162,7 @@
     <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
     <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
     <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <!-- <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/02.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/03.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/02.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/03.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div> -->
+    
 </div>
 <script>
 var opt={
@@ -199,3 +185,4 @@ var opt={
 }
 $('#waterfall').waterfall(opt);
 </script>
+@endsection
