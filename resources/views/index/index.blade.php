@@ -159,7 +159,8 @@
 <div id="waterfall">
     @if(!empty($photoes))
 	@foreach($photoes as $key => $value)
-	    <div class="cell"><a href="#"><img style="width: 300px;" src="/mkThumbnail/{{$value->path}}" /></a><p><a href="#"></a></p></div>
+	    <div class="cell">
+	    <a href="#"><img style="width: 300px;" src="/mkThumbnail/{{ base64_encode($value->path)}}" /></a><p><a href="#"></a></p></div>
 	@endforeach
     @endif    
 </div>

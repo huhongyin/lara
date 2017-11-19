@@ -47,7 +47,7 @@ class IndexController extends Controller
      */  
     public function mkThumbnail(Request $request) 
     {  
-        $src = $request->path;
+        $src = base64_decode($request->path);
         $width = 300;
         $height = 0;
         if (!isset($width) && !isset($height))  
