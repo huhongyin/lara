@@ -4,7 +4,7 @@
 	
 		<!-- Add your copyright text here -->
 		<div class="footer-text">
-			&copy; {{ date('Y', time()); }} 
+			&copy; {{ date('Y', time()) }} 
 			<strong>HHY</strong>
 		</div>
 		
