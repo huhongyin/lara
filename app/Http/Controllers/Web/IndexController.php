@@ -23,13 +23,6 @@ class IndexController extends Controller
 
     }
 
-    public function layouts()
-    {
-        return view('layouts.layouts', []);
-
-    }
-
-
     public function upload()
     {
 	$url = Storage::url('photoes/test/1.jpg');
