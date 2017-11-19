@@ -46,13 +46,13 @@
 					
 			<ul class="navbar-nav">
 				<li class="opened active">
-					<a href="/">
+					<a href="#">
 						<i class="linecons-cog"></i>
 						<span class="title">首页</span>
 					</a>
 					<ul>
 						<li>
-							<a href="dashboard-1.html">
+							<a href="/">
 								<span class="title">结婚照</span>
 							</a>
 						</li>
@@ -65,48 +65,26 @@
 			<!-- notifications and other links -->
 			<ul class="nav nav-userinfo navbar-right">
 				
-			
-				
-	
-		
 				<li class="dropdown user-profile">
 					<a href="#" data-toggle="dropdown">
 						<img src="/assets/images/user-1.png" alt="user-image" class="img-circle img-inline userpic-32" width="28" />
 						<span>
-							Arlind Nushi
+							用户名
 							<i class="fa-angle-down"></i>
 						</span>
 					</a>
 					
 					<ul class="dropdown-menu user-profile-menu list-unstyled">
 						<li>
-							<a href="#edit-profile">
+							<a href="/register">
 								<i class="fa-edit"></i>
-								New Post
+								注册
 							</a>
 						</li>
-						<li>
-							<a href="#settings">
-								<i class="fa-wrench"></i>
-								Settings
-							</a>
-						</li>
-						<li>
-							<a href="#profile">
-								<i class="fa-user"></i>
-								Profile
-							</a>
-						</li>
-						<li>
-							<a href="#help">
-								<i class="fa-info"></i>
-								Help
-							</a>
-						</li>
-						<li class="last">
+						<li class="/logout">
 							<a href="extra-lockscreen.html">
 								<i class="fa-lock"></i>
-								Logout
+								退出
 							</a>
 						</li>
 					</ul>
