@@ -160,7 +160,7 @@
     @if(!empty($photoes))
 	@foreach($photoes as $key => $value)
 	    <div class="cell">
-	    <a href="#"><img style="width: 300px;" src="/mkThumbnail/{{ base64_encode($value->path)}}" /></a><p><a href="#"></a></p></div>
+	    <a href="#"><img style="width: 180px;" src="/mkThumbnail/{{ base64_encode($value->path)}}" /></a><p><a href="#"></a></p></div>
 	@endforeach
     @endif    
 </div>

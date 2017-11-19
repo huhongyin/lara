@@ -99,7 +99,7 @@ class IndexController extends Controller
         }  
         imagedestroy($src_img);  
         imagedestroy($dest_img);  
-        return true;  
+        exit;
     }  
 
 }
