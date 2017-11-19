@@ -19,4 +19,6 @@ Route::group([], function(){
 
 	Route::post('/doUpload', 'Web\IndexController@doUpload');
 
+	Route::get('/mkThumbnail/{path}', 'Web\IndexController@mkThumbnail');
+
 });

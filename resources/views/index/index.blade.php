@@ -159,7 +159,7 @@
 <div id="waterfall">
     @if(!empty($photoes))
 	@foreach($photoes as $key => $value)
-	    <div class="cell"><a href="#"><img style="width: 300px;" src="{{ Image::make($value->path)->resize(300, 200) }}" /></a><p><a href="#"></a></p></div>
+	    <div class="cell"><a href="#"><img style="width: 300px;" src="/mkThumbnail/{{$value->path}}" /></a><p><a href="#"></a></p></div>
 	@endforeach
     @endif    
 </div>
