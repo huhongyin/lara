@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
 @section('content')
-<script src="/js/jquery.js"></script>
-<script src="/js/jquery.min.js"></script>
 	<form id="form"  action="/doUpload" method="post" enctype="multipart/form-data" class="form-inline">
 		<div class="row">
 			<label class="col-sm-3 control-label">请选择</label>
@@ -11,7 +9,7 @@
 
 		<div class="row">
 			<div class="col-sm-12">
-				<button onclick="upload()"  type="button" class="btn btn-info">提交</button>
+				<button  type="submit" class="btn btn-info">提交</button>
 			</div>
 		</div>
 	</form>

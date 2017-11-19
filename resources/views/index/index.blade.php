@@ -153,32 +153,31 @@
    }
 })(jQuery);
 </script>
-
+<div class="row">
+    <a class="btn btn-info" href="/upload">点我上传</a>
+</div>
 <div id="waterfall">
-    <div class="cell"><a href="#"><img src="/images/00.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/01.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/02.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/03.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/04.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/05.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    <div class="cell"><a href="#"><img src="/images/06.jpg" /></a><p><a href="http://sc.chinaz.com/jiaoben/"></a></p></div>
-    
+    @if(!empty($photoes))
+	@foreach($photoes as $key => $value)
+	    <div class="cell"><a href="#"><img src="{{ $value->path }}" /></a><p><a href="#"></a></p></div>
+	@endforeach
+    @endif    
 </div>
 <script>
 var opt={
   getResource:function(index,render){//index为已加载次数,render为渲染接口函数,接受一个dom集合或jquery对象作为参数。通过ajax等异步方法得到的数据可以传入该接口进行渲染，如 render(elem)
-	  if(index>=7) index=index%7+1;
-	  var html='';
-	  for(var i=20*(index-1);i<20*(index-1)+20;i++){
-		 var k='';
-		 for(var ii=0;ii<3-i.toString().length;ii++){
-	        k+='0';
-		 }
-		 k+=i;
-	     var src="http://cued.xunlei.com/demos/publ/img/P_"+k+".jpg";
-		 html+='<div class="cell"><a href="#"><img src="'+src+'" /></a><p>'+k+'</p></div>';
-	  }
-	  return $(html);
+	//  if(index>=7) index=index%7+1;
+	//  var html='';
+	//  for(var i=20*(index-1);i<20*(index-1)+20;i++){
+	//	 var k='';
+	//	 for(var ii=0;ii<3-i.toString().length;ii++){
+	//        k+='0';
+	//	 }
+	//	 k+=i;
+	//     var src="http://cued.xunlei.com/demos/publ/img/P_"+k+".jpg";
+	//	 html+='<div class="cell"><a href="#"><img src="'+src+'" /></a><p>'+k+'</p></div>';
+	//  }
+	//  return $(html);
   },
   auto_imgHeight:true,
   insert_type:1
