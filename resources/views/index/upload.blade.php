@@ -38,4 +38,4 @@
 
 @endsection
 
-<script src="/js/index/index.js"></script>
+<script src="/js/index/upload.js"></script>
