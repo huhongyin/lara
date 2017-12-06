@@ -31,15 +31,18 @@ class IndexRepository{
         $pathArr = [];
         if(count($files) > 0){
             foreach($files as $key => $file) {
-		$original = $file->getClientOriginalName();
+                $original = $file->getClientOriginalName();
+                //获取文件类型后缀
+                $extension = $file->getClientOriginalExtension();
+                $imageSize = getimagesize($original);
                 $path = $file->storeAs('public/photoes/'.$uid, $original);
-		if(!empty($path)){
-		    $saveData['user_id'] = $uid;
-		    $saveData['url'] = $path;
-		    $saveData['dir_name'] = $uid;
-		    Photoes::create($saveData);
-                    $pathArr[] = $path;
-		}
+        		if(!empty($path)){
+        		    $saveData['user_id'] = $uid;
+        		    $saveData['url'] = $path;
+        		    $saveData['dir_name'] = $uid;
+        		    Photoes::create($saveData);
+                            $pathArr[] = $path;
+        		}
             }
         }else{
             return array('code' => 0, 'msg' => '请选择图片');
