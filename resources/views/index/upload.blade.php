@@ -1,18 +1,35 @@
 @extends('layouts.layout')
 
 @section('content')
-<form id="form"  action="/doUpload" method="post" enctype="multipart/form-data" class="form-inline">
-    <div class="row">
-    	<label class="col-sm-3 control-label">请选择</label>
-    	<div class="col-sm-9"><input type="file" id="img" name="img" required="required"></div>
+<div class="row">
+    <div class="col-md-12">
+        
+        <!-- Default panel -->
+        <div class="panel panel-default">
+            
+            <div class="panel-body">
+                
+                <form id="form"  action="/doUpload" method="post" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label" for="field-4">请选择</label>
+                        
+                        <div class="col-sm-10">
+                            <input type="file" class="form-control" id="img" name="img" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <button style="float: right;" type="submit" class="btn btn-info">提交</button>
+                        </div>
+                    </div>
+                </form>
+                
+            </div>
+        </div>
+        
     </div>
+</div>
 
-    <div class="row">
-    	<div class="col-sm-12">
-    		<button  type="submit" class="btn btn-info">提交</button>
-    	</div>
-    </div>
-</form>
 
 @endsection
 
