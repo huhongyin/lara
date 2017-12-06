@@ -1,3 +1,4 @@
+
 <footer class="main-footer sticky footer-type-1">
 				
 	<div class="footer-inner">

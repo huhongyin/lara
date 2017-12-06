@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Xenon Boostrap Admin Panel" />
-  <meta name="author" content="" />
-  
-  <title>HHY'S WEBSITE</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  
-  <link rel="stylesheet" href="/assets/css/fonts/linecons/css/linecons.css">
-  <link rel="stylesheet" href="/assets/css/fonts/fontawesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="/assets/css/xenon-core.css">
-  <link rel="stylesheet" href="/assets/css/xenon-forms.css">
-  <link rel="stylesheet" href="/assets/css/xenon-components.css">
-  <link rel="stylesheet" href="/assets/css/xenon-skins.css">
-  <link rel="stylesheet" href="/assets/css/custom.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Xenon Boostrap Admin Panel" />
+    <meta name="author" content="" />
 
-  <script src="/assets/js/jquery-1.11.1.min.js"></script>
+    <title>HHY'S WEBSITE</title>
+
+
+    <link rel="stylesheet" href="/assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="/assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/xenon-core.css">
+    <link rel="stylesheet" href="/assets/css/xenon-forms.css">
+    <link rel="stylesheet" href="/assets/css/xenon-components.css">
+    <link rel="stylesheet" href="/assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+
+    <script src="/js/jquery.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-ui-1.12.1/jquery-ui.js" ></script>
+    <script src="/js/jquery-ui-1.12.1/jquery-ui.min.js" ></script>
+    <script src="/js/jquery-form.js"></script>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>

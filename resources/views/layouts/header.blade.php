@@ -59,6 +59,9 @@
 						</li>
 					</ul>
 				</li>
+				<li>
+					<a href="/upload">上传图片</a>
+				</li>
 			</ul>
 					
 			
