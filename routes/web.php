@@ -21,6 +21,6 @@ Route::group([], function(){
 
 	Route::get('/mkThumbnail/{path}', 'Web\IndexController@mkThumbnail');
 
-	Route::post('/deletePictureById'. 'Web\IndexController@deletePictureById');
+	Route::post('/deletePictureById', 'Web\IndexController@deletePictureById');
 
 });

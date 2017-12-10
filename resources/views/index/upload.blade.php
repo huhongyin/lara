@@ -24,7 +24,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <button type="button" class="btn btn-info">提交</button>
+                            <button onclick="upload()" type="button" class="btn btn-info">提交</button>
                         </div>
                     </div>
                 </form>
