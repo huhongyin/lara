@@ -17,7 +17,6 @@ function upload()
                         if(res.code == 200){
 
                                                                 window.location.href = '/';
-                                );
 
                         }else{
                                 layer.msg(res.msg, {
