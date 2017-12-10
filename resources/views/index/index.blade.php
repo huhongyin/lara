@@ -160,9 +160,9 @@
         <div class="panel panel-default">
             
             <div class="panel-body">
-		<audio autoplay="autoplay" loop="-1" >
-    			<source src="/js/music_two.mp3">
-		</audio>
+				<audio autoplay="autoplay" loop="-1" >
+		    			<source src="/js/music_two.mp3">
+				</audio>
 				<div id="waterfall">
 				    @if(!empty($photoes))
 					@foreach($photoes as $key => $value)
@@ -171,6 +171,38 @@
 					@endforeach
 				    @endif    
 				</div>
+
+				<!-- Album Images -->
+				<div class="album-images row">
+					
+					<!-- Album Image -->
+					@if(!empty($photoes))
+						@foreach($photoes as $key => $value)
+							<div class="col-md-3 col-sm-4 col-xs-6">
+								<div class="album-image">
+									<a href="#" class="thumb">
+										<img src="{{$value->path}}" class="img-responsive" />
+									</a>
+									
+									<!-- <a href="#" class="name">
+										<span>IMG_007.jpg</span>
+										<em>28 September 2014</em>
+									</a> -->
+									
+									<!-- <div class="image-options">
+										<a href="#" data-action="edit"><i class="fa-pencil"></i></a>
+										<a href="#" data-action="trash"><i class="fa-trash"></i></a>
+									</div> -->
+									
+									<!-- <div class="image-checkbox">
+										<input type="checkbox" class="cbr" />
+									</div> -->
+								</div>
+							</div>
+						@endforeach
+				    @endif 
+				</div>
+
 			</div>
 		</div>
 	</div>
