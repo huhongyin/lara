@@ -19,7 +19,7 @@
 						<!-- Album Image -->
 						@if(!empty($photoes))
 							@foreach($photoes as $key => $value)
-								<div class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle">
+								<div class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle" id="{{$value->id}}_div">
 									<div class="album-image">
 										<a href="#" class="thumb" data-action="edit">
 											<img src="{{$value->path}}" class="img-responsive" />
@@ -30,12 +30,12 @@
 											<em>{{ date('Y-m-d', strtotime($value['created_at'])) }}</em>
 										</a>
 										
-										<!-- <div class="image-options">
-											<a href="#" data-action="edit"><i class="fa-pencil"></i></a>
-											<a href="#" data-action="trash"><i class="fa-trash"></i></a>
+										<div class="image-options">
+											<!-- <a href="#" data-action="edit"><i class="fa-pencil"></i></a> -->
+											<a onclick="deletePicture('{{$value->id}}', '{{$value->id}}_div')" href="#" data-action="trash"><i class="fa-trash"></i></a>
 										</div>
 										
-										<div class="image-checkbox">
+										<!-- <div class="image-checkbox">
 											<input type="checkbox" class="cbr" />
 										</div> -->
 									</div>

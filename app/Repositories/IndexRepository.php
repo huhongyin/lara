@@ -97,6 +97,19 @@ class IndexRepository{
         }
     }
 
+    public function deletePictureById($id)
+    {
+    	$code = 0;
+    	$msg = '删除失败';
+    	$info = Photoes::find($id);
+    	if($info->delete()){
+    		$code = 200;
+    		$msg = '删除成功';
+    	}
+
+    	return array('code' => $code, 'msg' => $msg);
+    }
+
     public function getUserPhotoes($uid = 0)
     {
 	

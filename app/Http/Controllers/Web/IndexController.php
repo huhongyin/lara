@@ -33,8 +33,16 @@ class IndexController extends Controller
     public function doUpload(Request $request)
     {
         $res = $this->repository->doUpload($request->file());
-	return redirect('/');
+	   // return redirect('/');
+       return $res;
        // echo json_encode($res);exit;
+    }
+
+    public function deletePictureById(Request $request)
+    {
+        $id = $request->input('id', 0);
+        $res = $this->repository->deletePictureById($id);
+        return $res;
     }
 
     /** 
