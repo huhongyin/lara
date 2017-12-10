@@ -26,7 +26,7 @@
 										</a>
 										
 										<a href="#" class="name">
-											<span>IMG_007.jpg</span><br/>
+											<!-- <span>IMG_007.jpg</span><br/> -->
 											<em>{{ date('Y-m-d', strtotime($value['created_at'])) }}</em>
 										</a>
 										
