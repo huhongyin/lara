@@ -64,9 +64,9 @@
             
                 <div class="row">     
                     <div class="col-md-12">
-                        <div class="progress progress-striped active">
-                            <div class="progress-bar progress-bar-info" style="width: 0%">
-                                <span class="sr-only"></span>
+                        <div class="progress progress-striped active" style="height: 1.5em;">
+                            <div class="progress-bar progress-bar-info" style="width: 0%;height: 100%">
+                                <span class=""></span>
                             </div>
                         </div>
                     </div>
