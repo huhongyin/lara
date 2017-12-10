@@ -9,6 +9,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 class IndexRepository{
 
     private $config;
+    private $imageType = [1 => "gif", 2 => 'jpg', 3 => 'png'];
     public function __construct()
     {
 	
@@ -16,11 +17,12 @@ class IndexRepository{
 	
     public function getPhotoesByUid($uid = 0)
     {
-	$photoes = Photoes::where([['user_id', '=', $uid]])->select('user_id', 'dir_name', 'url')->get();
+	$photoes = Photoes::where([['user_id', '=', $uid], ['thumb_url', '!=', '']])->select('user_id', 'dir_name', 'url', 'thumb_url')->get();
 	if(count($photoes) > 0){
 	    foreach($photoes as $key => $value){
 		//var_dump(Image::make('/public/foo.jpg')->resize(200));exit;
-	    	$photoes[$key]->path = Storage::url($value->url);
+	    	$photoes[$key]->path = Storage::url($value->thumb_url);
+		$photoes[$key]->realPath = Storage::url($value->url);
 	    }
 	}
 	return $photoes;
@@ -32,14 +34,55 @@ class IndexRepository{
         if(count($files) > 0){
             foreach($files as $key => $file) {
                 $original = $file->getClientOriginalName();
+		$extension = $file->getClientOriginalExtension();
+		$nameArr = explode('.', $original);
+		$name = $nameArr[0];
+		$thumbName = $name.'_thumb';
+		$appDataDir = '/data/appdata/photoes/'.$thumbName.'.'.$extension;
+		$thumbDir = 'public/photoes/'.$uid.'/'.$thumbName.'.'.$extension;
                 //获取文件类型后缀
-                $extension = $file->getClientOriginalExtension();
-                $imageSize = getimagesize($original);
+		$realPath = $file->getRealPath();
+                $imageSize = getimagesize($realPath);
+		$fileSize = filesize($realPath);
+		$oldWidth = $imageSize[0];
+		$oldHeight = $imageSize[1];
+		$imageType = $this->imageType[$imageSize[2]];
+		//宽高比,统一宽度256px
+		$widthCheight = $oldWidth / $oldHeight;
+		$newWidth = 256;
+		$newHeight = $newWidth / $widthCheight;
+		//创建画布
+		$canvas = imagecreatetruecolor($newWidth, $newHeight);
+		$thumbImgSource = '';
+		switch($imageType){
+                    case 'gif':
+			$thumbImgSource = imagecreatefromgif($realPath);
+			$copy = imagecopyresized($canvas, $thumbImgSource, 0, 0, 0, 0, $newWidth, $newHeight, $oldWidth, $oldHeight);
+			$thumbRes = imagegif($canvas, $appDataDir);
+		break;
+                    case 'jpg':
+			$thumbImgSource = imagecreatefromjpeg($realPath);
+			$copy = imagecopyresized($canvas, $thumbImgSource, 0, 0, 0, 0, $newWidth, $newHeight, $oldWidth, $oldHeight);
+			$thumbRes = imagejpeg($canvas, $appDataDir);
+		break;
+		    case 'png':
+			$thumbImgSource = imagecreatefrompng($realPath);
+			$copy = imagecopyresized($canvas, $thumbImgSource, 0, 0, 0, 0, $newWidth, $newHeight, $oldWidth, $oldHeight);
+			$thumbRes = imagepng($canvas, $appDataDir);
+		break;
+		}
+		if($thumbRes){
+		    $content = file_get_contents($appDataDir);
+		}
+		if(!empty($content)){
+		    $storageRes = Storage::put('public/photoes/'.$uid.'/'.$thumbName.'.'.$extension, $content);
+		}
                 $path = $file->storeAs('public/photoes/'.$uid, $original);
-        		if(!empty($path)){
+        		if(!empty($path) && $storageRes){
         		    $saveData['user_id'] = $uid;
         		    $saveData['url'] = $path;
         		    $saveData['dir_name'] = $uid;
+			    $saveData['thumb_url'] = $thumbDir;
         		    Photoes::create($saveData);
                             $pathArr[] = $path;
         		}

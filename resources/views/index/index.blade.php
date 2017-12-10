@@ -1,28 +1,8 @@
 @extends('layouts.layout')
 @section('content')
-<div class="row">
-    <div class="col-md-12">
-        
-        <!-- Default panel -->
-        <div class="panel panel-default">
-            
-            <div class="panel-body">
-				<div id="waterfall">
-				    @if(!empty($photoes))
-					@foreach($photoes as $key => $value)
-					    <div class="cell">
-					    <a href="#"><img style="width: 180px;" src="{{$value->path}}" /></a><p><a href="#"></a></p></div>
-					@endforeach
-				    @endif    
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<script src="/js/index/index.js"></script>
-@endsection
-<script type="text/javascript">
-	$(function(){
+<link href="/css/zzsc.css" type="text/css" rel="stylesheet" />
+<script>
+;(function($){
    var 
    //参数
    setting={
@@ -60,9 +40,7 @@
 		  });
 	   }
    });
-
-   function creatColumn()
-   {//创建列
+   function creatColumn(){//创建列
       waterfall.column_num=calculateColumns();//列数
 	  //循环创建列
 	  var html='';
@@ -72,16 +50,12 @@
 	  $waterfall.prepend(html);//插入列
 	  return $('.'+setting.column_className,$waterfall);//列集合
    }
-
-   function calculateColumns()
-   {//计算需要的列数
+   function calculateColumns(){//计算需要的列数
       var num=Math.floor(($waterfall.innerWidth())/(setting.column_width+setting.column_space));
 	  if(num<1){ num=1; } //保证至少有一列
 	  return num;
    }
-
-   function render(elements,fadein)
-   {//渲染元素
+   function render(elements,fadein){//渲染元素
       if(!$(elements).length) return;//没有元素
       var $columns = waterfall.$columns;
       $(elements).each(function(i){										
@@ -126,32 +100,24 @@
 		  }						
 	  });
    }
-
-   function public_render(elems)
-   {//ajax得到元素的渲染接口
+   function public_render(elems){//ajax得到元素的渲染接口
    	  render(elems,true);	
    }
-
-   function insert($element,fadein)
-   {//把元素插入最短列
+   function insert($element,fadein){//把元素插入最短列
       if(fadein){//渐显
 	     $element.css('opacity',0).appendTo(waterfall.$columns.eq(calculateLowest())).fadeTo(setting.fadein_speed,1);
 	  }else{//不渐显
          $element.appendTo(waterfall.$columns.eq(calculateLowest()));
 	  }
    }
-
-   function insert2($element,i,fadein)
-   {//按序轮流插入元素
+   function insert2($element,i,fadein){//按序轮流插入元素
       if(fadein){//渐显
 	     $element.css('opacity',0).appendTo(waterfall.$columns.eq(i%waterfall.column_num)).fadeTo(setting.fadein_speed,1);
 	  }else{//不渐显
          $element.appendTo(waterfall.$columns.eq(i%waterfall.column_num));
 	  }
    }
-
-   function calculateLowest()
-   {//计算最短的那列的索引
+   function calculateLowest(){//计算最短的那列的索引
       var min=waterfall.$columns.eq(0).outerHeight(),min_key=0;
 	  waterfall.$columns.each(function(i){						   
 		 if($(this).outerHeight()<min){
@@ -161,17 +127,12 @@
 	  });
 	  return min_key;
    }
-
-   function getElements()
-   {//获取资源
+   function getElements(){//获取资源
       $.waterfall.load_index++;
       return setting.getResource($.waterfall.load_index,public_render);
    }
-
    waterfall._scrollTimer=null;//延迟滚动加载计时器
-
-   function onScroll()
-   {//滚动加载
+   function onScroll(){//滚动加载
       clearTimeout(waterfall._scrollTimer);
 	  waterfall._scrollTimer=setTimeout(function(){
 	      var $lowest_column=waterfall.$columns.eq(calculateLowest());//最短列
@@ -183,34 +144,59 @@
 		  }
 	  },100);
    }
-
-   function onResize()
-   {//窗口缩放时重新排列
+   function onResize(){//窗口缩放时重新排列
       if(calculateColumns()==waterfall.column_num) return; //列数未改变，不需要重排
       var $cells=waterfall.$waterfall.find(setting.cell_selector);
 	  waterfall.$columns.remove();
 	  waterfall.$columns=creatColumn();
       render($cells,false); //重排已有元素时强制不渐显
    }
-});
+})(jQuery);
+</script>
+<div class="row">
+    <div class="col-md-12">
+        
+        <!-- Default panel -->
+        <div class="panel panel-default">
+            
+            <div class="panel-body">
+		<audio autoplay="autoplay" loop="-1" >
+    			<source src="/js/music_two.mp3">
+		</audio>
+				<div id="waterfall">
+				    @if(!empty($photoes))
+					@foreach($photoes as $key => $value)
+					    <div class="cell">
+					    <a href="#" onclick="bigImg('{{ $value->realPath }}')"><img style="width: 180px;" src="{{$value->path}}" /></a><p><a href="#"></a></p></div>
+					@endforeach
+				    @endif    
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/js/index/index.js"></script>
+<script type="text/javascript">
 
 var opt={
   getResource:function(index,render){//index为已加载次数,render为渲染接口函数,接受一个dom集合或jquery对象作为参数。通过ajax等异步方法得到的数据可以传入该接口进行渲染，如 render(elem)
-	//  if(index>=7) index=index%7+1;
-	//  var html='';
-	//  for(var i=20*(index-1);i<20*(index-1)+20;i++){
-	//	 var k='';
-	//	 for(var ii=0;ii<3-i.toString().length;ii++){
-	//        k+='0';
-	//	 }
-	//	 k+=i;
-	//     var src="http://cued.xunlei.com/demos/publ/img/P_"+k+".jpg";
-	//	 html+='<div class="cell"><a href="#"><img src="'+src+'" /></a><p>'+k+'</p></div>';
-	//  }
-	//  return $(html);
+        //  if(index>=7) index=index%7+1;
+        //  var html='';
+        //  for(var i=20*(index-1);i<20*(index-1)+20;i++){
+        //       var k='';
+        //       for(var ii=0;ii<3-i.toString().length;ii++){
+        //        k+='0';
+        //       }
+        //       k+=i;
+        //     var src="http://cued.xunlei.com/demos/publ/img/P_"+k+".jpg";
+        //       html+='<div class="cell"><a href="#"><img src="'+src+'" /></a><p>'+k+'</p></div>';
+        //  }
+        //  return $(html);
   },
   auto_imgHeight:true,
   insert_type:1
 }
 $('#waterfall').waterfall(opt);
 </script>
+
+@endsection

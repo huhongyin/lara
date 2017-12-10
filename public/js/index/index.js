@@ -190,3 +190,15 @@
 //   insert_type:1
 // }
 // $('#waterfall').waterfall(opt);
+function bigImg(url)
+{
+    layer.open({
+  	type: 1,
+  	title: false,
+  	closeBtn: 0,
+  	area: ['300px', '400px'],
+  	skin: 'layui-layer-nobg', //没有背景色
+  	shadeClose: true,
+        content: '<img style="height:100%;width:100%;" src="'+url+'">'
+    });
+}

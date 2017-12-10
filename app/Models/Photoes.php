@@ -9,5 +9,5 @@ class Photoes extends Model
     //
     public $table = 'photoes';
     public $dateFormat = 'U';
-    public $fillable = ['id', 'user_id', 'dir_name', 'url'];
+    public $fillable = ['id', 'user_id', 'dir_name', 'url', 'thumb_url'];
 }

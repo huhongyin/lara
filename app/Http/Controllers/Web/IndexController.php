@@ -18,8 +18,9 @@ class IndexController extends Controller
 
     public function index()
     {
+	$musicPath = Storage::url('public/musics/0/music_two.mp3');
 	$photoes = $this->repository->getPhotoesByUid();
-        return view('index.index', compact('photoes'));
+        return view('index.index', compact('photoes', 'musicPath'));
 
     }
 
