@@ -19,7 +19,7 @@
                         <label class="col-sm-2 control-label" for="field-4">请选择</label>
                         
                         <div class="col-sm-10">
-                            <input type="file" class="form-control" id="img" name="img" required="required">
+                            <input type="file" class="form-control" id="img" name="img" accept="image/*" required="required" multiple="multiple">
                         </div>
                     </div>
                     <div class="row">

@@ -26,18 +26,18 @@
 										</a>
 										
 										<a href="#" class="name">
-											<span>IMG_007.jpg</span>
+											<span>IMG_007.jpg</span><br/>
 											<em>{{ date('Y-m-d', strtotime($value['created_at'])) }}</em>
 										</a>
 										
-										<div class="image-options">
+										<!-- <div class="image-options">
 											<a href="#" data-action="edit"><i class="fa-pencil"></i></a>
 											<a href="#" data-action="trash"><i class="fa-trash"></i></a>
 										</div>
 										
 										<div class="image-checkbox">
 											<input type="checkbox" class="cbr" />
-										</div>
+										</div> -->
 									</div>
 								</div>
 							@endforeach
