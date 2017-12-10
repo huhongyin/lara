@@ -27,7 +27,7 @@
 										
 										<a href="#" class="name">
 											<span>IMG_007.jpg</span>
-											<em>{{ date('Y-m-d', strtorime($value['created_at'])) }}</em>
+											<em>{{ date('Y-m-d', strtotime($value['created_at'])) }}</em>
 										</a>
 										
 										<div class="image-options">
