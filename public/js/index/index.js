@@ -39,7 +39,7 @@ function bigImg(url)
 //delete picture
 function deletePicture(id, objId)
 {
-	if(id != 0 || id != '' || id != null || typeof(id) != 'undefined'){
+	if(id == 0 || id == '' || id == null || typeof(id) == 'undefined'){
 		//询问框
 		layer.confirm('您还没有选择图片哟', {
 		    btn: ['确认'] //按钮

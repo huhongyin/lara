@@ -17,7 +17,7 @@ class IndexRepository{
 	
     public function getPhotoesByUid($uid = 0)
     {
-	$photoes = Photoes::where([['user_id', '=', $uid], ['thumb_url', '!=', '']])->select('user_id', 'dir_name', 'url', 'thumb_url', 'created_at')->get();
+	$photoes = Photoes::where([['user_id', '=', $uid], ['thumb_url', '!=', '']])->select('id', 'user_id', 'dir_name', 'url', 'thumb_url', 'created_at')->get();
 	if(count($photoes) > 0){
 	    foreach($photoes as $key => $value){
 		//var_dump(Image::make('/public/foo.jpg')->resize(200));exit;
