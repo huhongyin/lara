@@ -13,7 +13,7 @@ function upload()
                 	}
             	},
                 success : function(res){
-			$("#progressModal").modal('hide', {backdrop: 'static', keyboard: false});
+			$("#progressModal").modal('hide');
                         if(res.code == 200){
 
                                                                 window.location.href = '/';
@@ -25,7 +25,7 @@ function upload()
                         }
                 },
                 error : function(err){
-			$("#progressModal").modal('hide', {backdrop: 'static', keyboard: false});
+			$("#progressModal").modal('hide');
                         layer.msg('服务器异常', {
                                 'icon' : 3,
                         });

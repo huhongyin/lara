@@ -19,7 +19,7 @@
 						<!-- Album Image -->
 						@if(!empty($photoes))
 							@foreach($photoes as $key => $value)
-								<div onclick="bigImg('{{$value->url}}')" class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle" id="{{$value->id}}_div">
+								<div onclick="bigImg('{{$value->realPath}}')" class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle" id="{{$value->id}}_div">
 									<div class="album-image">
 										<a href="#" class="thumb" data-action="edit">
 											<img src="{{$value->path}}" class="img-responsive" />
