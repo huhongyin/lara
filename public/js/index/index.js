@@ -66,3 +66,45 @@ function deletePicture(id, objId)
 		}
 	});
 }
+
+function getPhotoesByPage()
+{
+	var page = $("#loadMoreBtn").attr('data-current-page');
+	var uid = 0;
+	var photoesStr = '';
+	$.ajax({
+		method : 'get',
+		dataType : 'json',
+		data : {page : page, uid : uid},
+		url : '/getPhotoesByPage',
+		success : function(res){
+			if(res.data.data.lenght <= 0){
+				$("#loadMoreBtn i").html('没有更多了');
+				return;
+			}
+
+			$("#loadMoreBtn").attr('data-current-page', res.data.nextPage);
+			var photoes = res.data.data;
+			for(var i in photoes){
+				photoesStr += '<div onclick="bigImg('photoes[i]['realPath']')" class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle" id="'+photoes[i]['id']+'_div">' +
+									'<div class="album-image">'+
+										'<a href="#" class="thumb" data-action="edit">'+
+											'<img src="'+photoes[i]['path']+'" class="img-responsive" />'+
+										'</a>'+
+										'<a href="#" class="name">'+
+											'<em>'+photoes[i]['created_at']+'</em>'+
+										'</a>'+
+										
+										'<div class="image-options">'+
+											'<a onclick="deletePicture('+photoes[i]['id']+', 'photoes[i]['id']'_div)" href="#" data-action="trash"><i class="fa-trash"></i></a>'+
+										'</div>'+
+									'</div>'+
+								'</div>';
+			}
+			$("#photoesDiv").html(photoesStr);
+		},
+		error : function(err){
+			layer.msg('获取数据失败，请联系胡洪印');
+		}
+	});
+}

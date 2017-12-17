@@ -14,10 +14,10 @@
 				<div class="col-sm-12 gallery-right">
 				
 					<!-- Album Images -->
-					<div class="album-images row ui-sortable"">
+					<div class="album-images row ui-sortable" id="photoesDiv">
 						
 						<!-- Album Image -->
-						@if(!empty($photoes))
+						<!-- @if(!empty($photoes))
 							@foreach($photoes as $key => $value)
 								<div onclick="bigImg('{{$value->realPath}}')" class="col-md-3 col-sm-4 col-xs-6 ui-sortable-handle" id="{{$value->id}}_div">
 									<div class="album-image">
@@ -41,14 +41,14 @@
 									</div>
 								</div>
 							@endforeach
-					    @endif 
+					    @endif  -->
 					</div>
 					
 					
-					<!-- <button class="btn btn-white btn-block">
-						<i class="fa-bars"></i>
+					<button id="loadMoreBtn" class="btn btn-white btn-block" data-current-page="1">
+						<i class="fa-bars" onclick="loadMore()"></i>
 						加载更多
-					</button> -->
+					</button>
 					
 				</div>
 			</div>

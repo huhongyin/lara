@@ -15,17 +15,18 @@ class IndexRepository{
 	
     }
 	
-    public function getPhotoesByUid($uid = 0)
+    public function getPhotoesByUid($uid = 0, $page, $pageSize)
     {
-	$photoes = Photoes::where([['user_id', '=', $uid], ['thumb_url', '!=', '']])->select('id', 'user_id', 'dir_name', 'url', 'thumb_url', 'created_at')->get();
-	if(count($photoes) > 0){
-	    foreach($photoes as $key => $value){
-		//var_dump(Image::make('/public/foo.jpg')->resize(200));exit;
-	    	$photoes[$key]->path = Storage::url($value->thumb_url);
-		$photoes[$key]->realPath = Storage::url($value->url);
-	    }
-	}
-	return $photoes;
+		$photoes = Photoes::where([['user_id', '=', $uid], ['thumb_url', '!=', '']])->select('id', 'user_id', 'dir_name', 'url', 'thumb_url', 'created_at')->offset(($page - 1) * $pageSize)->limit($pageSize)->get();
+		if(count($photoes) > 0){
+		    foreach($photoes as $key => $value){
+			//var_dump(Image::make('/public/foo.jpg')->resize(200));exit;
+		    	$photoes[$key]->path = Storage::url($value->thumb_url);
+				$photoes[$key]->realPath = Storage::url($value->url);
+				$photoes[$key]->created_at = date('Y-m-d', strtotime($value->created_at));
+		    }
+		}
+		return array('code' => 200, 'msg' => '', 'data' => ['data' => $photoes, 'nextPage' => $page++]);
     }
 
     public function doUpload($files, $uid = 0)

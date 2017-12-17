@@ -18,9 +18,9 @@ class IndexController extends Controller
 
     public function index()
     {
-	$musicPath = Storage::url('public/musics/0/music_two.mp3');
-	$photoes = $this->repository->getPhotoesByUid();
-        return view('index.index', compact('photoes', 'musicPath'));
+    	$musicPath = Storage::url('public/musics/0/music_two.mp3');
+    	// $photoes = $this->repository->getPhotoesByUid();
+        return view('index.index', compact('musicPath'));
 
     }
 
@@ -110,5 +110,15 @@ class IndexController extends Controller
         imagedestroy($dest_img);  
         exit;
     }  
+
+    //ajax
+    public function getPhotoesByPage(Request $request)
+    {
+        $uid = empty($request->uid) ? 0 : $request->uid;
+        $page = empty($request->page) ? 1 : $request->page; //默认第一页
+        $pageSize = 10;
+        $res = $this->repository->getPhotoesByUid($uid, $page, $pageSize);
+        return $res;
+    }
 
 }

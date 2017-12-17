@@ -23,4 +23,6 @@ Route::group([], function(){
 
 	Route::post('/deletePictureById', 'Web\IndexController@deletePictureById');
 
+	Route::get('/getPhotoesByPage', 'Web\IndexController@getPhotoesByPage');
+
 });
