@@ -1,5 +1,12 @@
 @extends('layouts.layout')
 @section('content')
+<style>
+	#photoesDiv img{
+		width : 280px;
+		height : 185px;
+	}
+</style>
+
 <audio autoplay="autoplay" loop="-1" >
 	<source src="/js/music_two.mp3">
 </audio>
@@ -45,8 +52,8 @@
 					</div>
 					
 					
-					<button id="loadMoreBtn" class="btn btn-white btn-block" data-current-page="1">
-						<i class="fa-bars" onclick="loadMore()"></i>
+					<button id="loadMoreBtn" onclick="getPhotoesByPage()" class="btn btn-white btn-block" data-current-page="1">
+						<i class="fa-bars"></i>
 						加载更多
 					</button>
 					

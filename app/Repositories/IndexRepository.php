@@ -23,10 +23,9 @@ class IndexRepository{
 			//var_dump(Image::make('/public/foo.jpg')->resize(200));exit;
 		    	$photoes[$key]->path = Storage::url($value->thumb_url);
 				$photoes[$key]->realPath = Storage::url($value->url);
-				$photoes[$key]->created_at = date('Y-m-d', strtotime($value->created_at));
 		    }
 		}
-		return array('code' => 200, 'msg' => '', 'data' => ['data' => $photoes, 'nextPage' => $page++]);
+		return array('code' => 200, 'msg' => '', 'data' => ['data' => $photoes, 'nextPage' => $page + 1]);
     }
 
     public function doUpload($files, $uid = 0)

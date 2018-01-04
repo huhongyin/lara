@@ -116,7 +116,7 @@ class IndexController extends Controller
     {
         $uid = empty($request->uid) ? 0 : $request->uid;
         $page = empty($request->page) ? 1 : $request->page; //默认第一页
-        $pageSize = 10;
+        $pageSize = 8;
         $res = $this->repository->getPhotoesByUid($uid, $page, $pageSize);
         return $res;
     }
