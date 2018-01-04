@@ -46,21 +46,18 @@
 					
 			<ul class="navbar-nav">
 				<li class="opened active">
-					<a href="#">
+					<a href="/processEngineList">
 						<i class="linecons-cog"></i>
-						<span class="title">首页</span>
+						<span class="title">流程列表</span>
 					</a>
-					<ul>
+					<!-- <ul>
 						<li>
 							<a href="/">
 								<span class="title">结婚照</span>
 							</a>
 						</li>
 						</li>
-					</ul>
-				</li>
-				<li>
-					<a href="/upload">上传图片</a>
+					</ul> -->
 				</li>
 			</ul>
 					
