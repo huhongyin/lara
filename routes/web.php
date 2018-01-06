@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', 'Web\IndexController@index');
+Route::get('/', function(){
+    return view('welcome');
+});
 
 /*流程配置相关路由组*/
 Route::group([], function(){

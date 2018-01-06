@@ -11,9 +11,15 @@ class ProcessEngineController extends Controller
 {
     private $repository;
 
-    function   __construct(IndexRepository $repository)
+    function   __construct(ProcessEngineRepository $repository)
     {
         $this->repository = $repository;
+    }
+
+    //已有配置列表
+    public function processEngineList(Request $request)
+    {
+
     }
 
 }
