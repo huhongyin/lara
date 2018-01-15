@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Repositories\ProcessEngineRepository;
 use Illuminate\Support\Facades\Storage;
 
-class essEngineController extends ControllerProc
+class ProcessEngineController extends Controller
 {
     private $repository;
 

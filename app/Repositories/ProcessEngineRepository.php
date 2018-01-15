@@ -2,13 +2,13 @@
 namespace App\Repositories;
 
 use Illuminate\Support\Facades\Storage;
-use App\Models\ProcessEngineInfoModel;
+use App\Models\ProcessEngineInfo;
 
 class ProcessEngineRepository{
 
 	public function getList()
 	{
-		$list = ProcessEngineInfoModel::paginate(15);
+		$list = ProcessEngineInfo::paginate(15);
         return $list;
 	}
 
