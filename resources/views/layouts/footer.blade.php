@@ -1,3 +1,4 @@
+<script src="/assets/js/jquery-validate/jquery.validate.min.js"></script>
 
 <footer class="main-footer sticky footer-type-1">
 				
