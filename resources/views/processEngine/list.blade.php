@@ -26,6 +26,7 @@
 		                		<tr>
 		                			<th>流程id</th>
 		                			<th>流程名</th>
+									<th>操作</th>
 		                		</tr>
 		                	</thead>
 		                	<tbody>
@@ -34,6 +35,9 @@
 		                				<tr>
 		                					<td>{{$value->id}}</td>
 		                					<td>{{$value->process_engine_name}}</td>
+											<td>
+												<a role="button" class="btn btn-sm btn-info" href="/addProcessEngine/{{$value->id}}">修改</a>
+											</td>
 		                				</tr>
 		                			@endforeach
 		                		@endif

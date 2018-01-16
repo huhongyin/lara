@@ -20,5 +20,5 @@ Route::group([], function(){
 
 	Route::get('/processEngineList', 'Web\ProcessEngineController@processEngineList');
 
-	Route::get('/addProcessEngine', 'Web\ProcessEngineController@addProcessEngine');
+	Route::get('/addProcessEngine/{id}', 'Web\ProcessEngineController@addProcessEngine');
 });
