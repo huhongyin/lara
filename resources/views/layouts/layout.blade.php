@@ -39,7 +39,7 @@
   @include('layouts.header')
   
   <div class="page-container">
-
+    @include('layouts.sidebar')
     <div class="main-content">
       
       @yield('content')   
