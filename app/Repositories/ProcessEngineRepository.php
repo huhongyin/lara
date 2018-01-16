@@ -17,7 +17,7 @@ class ProcessEngineRepository{
 
 	public function getInfo($id)
     {
-        $where = ['id', '=', $id];
+        $where = [['id', '=', $id]];
         $info = ProcessEngineInfo::where($where)->first();
         return $info;
     }
