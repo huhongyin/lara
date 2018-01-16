@@ -14,11 +14,11 @@
 
             <div class="panel-body">
 				<form role="form" id="form1" method="post" class="validate">
-
+					<input value="{{@$info->id}}" type="hidden" name="id">
 					<div class="form-group">
 						<label class="control-label">流程名</label>
 
-						<input type="text" class="form-control" name="data[process_engine_name]" data-validate="required" data-message-required="流程名不能为空" placeholder="请输入流程名" />
+						<input type="text" value="{{@$info->process_engine_name}}" class="form-control" name="data[process_engine_name]" data-validate="required" data-message-required="流程名不能为空" placeholder="请输入流程名" />
 					</div>
 
 					<div class="form-group">
