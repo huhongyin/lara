@@ -21,4 +21,7 @@ Route::group([], function(){
 	Route::get('/processEngineList', 'Web\ProcessEngineController@processEngineList');
 
 	Route::get('/addProcessEngine/{id}', 'Web\ProcessEngineController@addProcessEngine');
+
+	//添加流程
+    Route::post('/doAddProcessEngine', 'Web\ProcessEngineController@doAddProcessEngine');
 });
